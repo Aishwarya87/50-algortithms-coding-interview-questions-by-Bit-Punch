@@ -1,0 +1,21 @@
+In-place
+ALGORITHM:
+
+Instead of pushing the zeroes to the end of the array, why not move the non-zero elements to the beginning
+(in the same order) and keep tarck of their count.
+
+so, if there are total j non-zero elements, then 0's should start from index j.
+
+define a pointer j at the beginning of the array, j=0
+
+for each num in input:
+  if num!=0:
+    nums[j]=num
+    j+=1
+    
+for every position x starting from j until input end; nums[x]=0
+
+TIME COMPLEXITY: O(2*N)= O(N)
+We do 2 separate loops over the input array.
+
+SPACE COMPLEXITY: O(1)/ Constant Complexity
