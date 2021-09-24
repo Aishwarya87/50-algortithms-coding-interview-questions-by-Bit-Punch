@@ -1,0 +1,12 @@
+We are looking for an increasing sequence followed by a decreasing sequence. Elements can not have the same values.
+ALGORITHM:
+ initialize a loop index starting from 1.
+ this loop will go on till the current element is bigger than the previous element.
+ the purpose of this loop is to find the index from which we should find the decreasing sequence.
+ 
+ 
+ if i==1 after the loop, the loop doesnt have an increasing sequence
+ if i==len(A), no decreasing sequence
+ RETURN FALSE
+ 
+ 
