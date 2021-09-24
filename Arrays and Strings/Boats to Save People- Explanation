@@ -1,0 +1,30 @@
+We want to maximize the no. of pairs of people whose weights can be added together in the same boat.
+ALGORITHMS:
+
+Sort the array
+
+attempt to add the heaviest and the lightest person in the same boat.
+
+What will we use to match the heaviest and lightest available people? Two pointers.
+
+Initialize two pointers, left at the beginning of the array and right at the end of the array, as well as initializing the
+boats_number=0
+
+left=0 (lighest person)
+right=len(people)-1  (heaviest person)
+boats_number=0
+
+loop as long as the right pointer is bigger than or equal to the the left pointer.
+while(left<=right)
+
+when the left pointer= right pointer; boats_number+=1; this means that this person will need the boat by himself.
+Solo Passenger
+
+if left+right>limit: heaviest person,needs a whole another boat.
+
+Worst case scenario: every person needs a boat by himself.
+
+TIME COMPLEXITY= O(N LOG(N))   (MERGE SORT/QUICK SORT)
+because we sort the input array. Looping over: O(n)
+
+SPACE COMPLEXITY= O(N) since people.sort() internally uses an algorithm that has O(N) space complexity.
