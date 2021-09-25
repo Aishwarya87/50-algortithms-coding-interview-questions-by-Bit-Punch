@@ -1,0 +1,43 @@
+Substring - contiguous
+Subsequence- can have breaks in between. non-contagious
+
+Brute Force- generate every possible substring without repeating characters and take the longest one.
+
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        if len(s)<=1:
+            return len(s)  #quick optimization for the edge cases
+        longest=0
+        left=0
+        while left<len(s):
+            seenchars={}
+            currLength=0
+            right=left
+            while right<len(s):
+                currChar=s[right]
+                if currChar not in seenchars:
+                    currLength+=1
+                    seenchars[currChar]=True
+                    longest=max(longest,currLength)
+                else:
+                    break  #breaks the j loop and goes to the ith iteration
+                right+=1
+            left+=1
+        return longest
+        
+Space complexity: O(N)
+Time complexity:; O(N^2)
+
+
+
+SLIDIDNG WINDOW TECHNIQUE:
+two pointers.
+
+the size of the window changes based on the new characters.
+
+
+
+
+
+
+
