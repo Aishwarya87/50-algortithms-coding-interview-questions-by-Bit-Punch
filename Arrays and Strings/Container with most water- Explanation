@@ -17,6 +17,8 @@ Insight:  area=maximum;
           height= greater
           pointer(fix)= that is big
           
+          calculating the area of the rectangle(container)where the water is enclosed.
+          
           
 Time complexity: O(N)/Linear we do a single pass over our container
 Space Complexity: O(1):  didnt store anything that relates to the input size
