@@ -9,4 +9,5 @@ ALGORITHM:
  if i==len(A), no decreasing sequence
  RETURN FALSE
  
- 
+ TIME COMPLEXITY: O(N)
+ Space Complexity: O(1)
