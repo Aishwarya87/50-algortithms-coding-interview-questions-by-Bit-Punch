@@ -1,0 +1,22 @@
+Real question: Find the maximum difference between x position multiplied by the height [RECTANGLE].
+
+ALGORITHM:
+
+Have two pointers at the ends of the array. 
+l=0  r=len(input)-1
+maxarea=0
+
+while(l<r):  #stop when left pointer= right pointer
+Maximize the area between our two buildings.
+
+Decide what pointer should we move:
+Area has to be maxiumum, so the pointer that points to lower height has to be moved with the hope 
+of finding a larger height pointer.
+
+Insight:  area=maximum;
+          height= greater
+          pointer(fix)= that is big
+          
+          
+Time complexity: O(N)/Linear we do a single pass over our container
+Space Complexity: O(1):  didnt store anything that relates to the input size
