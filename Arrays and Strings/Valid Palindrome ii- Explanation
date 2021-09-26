@@ -1,0 +1,6 @@
+Palindrome is a SubProblem. It's not the whole picture.
+Have to find the conflicting characters.
+
+
+left and right pointer that will point to the outside of our actual string.
+
