@@ -1,0 +1,24 @@
+class Solution:
+    def validPalindrome(self, s: str) -> bool:
+        left,right=0,len(s)-1
+        # a b c c d b a
+        def checkPalindrome(s,left,right):
+            while(left<right):
+                if s[left]!=s[right]:
+                    return False
+                left+=1
+                right-=1
+            return True
+            
+        while(left<right):
+            if s[left]!=s[right]:
+                return(checkPalindrome(s,left+1,right) or checkPalindrome(s,left,right-1))
+            #l+1 indicates deleting the conflicting character and passing the new string
+            left+=1
+            right-=1
+        return True
+        
+Time Complexity: We touch every element just one time. Even when there is one additional method check, but this continues off from where the left and right pointers are.
+Therefore, O(N)
+
+Space Complexity: Not storing any scaling data structures. O(1).
