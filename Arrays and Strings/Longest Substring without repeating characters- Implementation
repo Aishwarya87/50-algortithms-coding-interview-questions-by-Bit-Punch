@@ -16,3 +16,8 @@ class Solution:
             right+=1
             
         return longest
+
+TIME COMPLEXITY: O(N): because the time scales up in the size of the input.
+SPACE COMPLEXITY: O(N): beacuse of the dictionary/ hash map in the worst case where it the characters in the string are non-repeated.
+
+Insight: we use seen.get(currentChar) or .set objects or methods when the original Data Structure uses the object notation(new Map)
