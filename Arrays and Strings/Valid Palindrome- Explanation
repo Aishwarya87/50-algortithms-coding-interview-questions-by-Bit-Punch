@@ -1,0 +1,15 @@
+Pattern Matching- Palindrome(A palindrome is as string that reads the same forwards and backwards).
+race car: palindrome
+"": palindrome
+
+STRATEGY:01
+left=0
+right=n-1, the characters should be the same
+len= even, len=odd
+
+STRATEGY:02(reverse of solution01)
+left,right=centre
+
+STRATEGY:03
+Transform into the one without the spaces.
+Create a duplicate of the string in reverse/flip.
