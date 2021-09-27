@@ -1,2 +1,33 @@
 Linked List is a structure between the simple arrays and the complex structures.
+Chain of data structure known as a ListNode(class object in the code also called as a ListNode).
+List Node Properties:
+value: any(string,number,anything)
+next: pointer(either points to a ListNode or points to null).
+
+Head: the very first ListNode
+Tail: the very last ListNode(not necessary, in cycle)
+Format::::   Getting/Returning a linked list, it's the head.
+
+Verify the constraints: 
+return null when receive null.
+Single node, return that node.
+
+Test cases
+
+Insights:
+We dont know the length of the linked list(unlike arrays and strings) because we only get the front node(head).
+
+SKELETON of iterating through a linked list:
+
+function(head):
+  currentNode=head
+  while(currentNode):
+    #perform operation
+    currentNode=currentNode.next
+      
+Thinking about the solution:
+have to change the pointers.
+If we set 1 to null first, then we lose reference to the second node.
+So have to store the next value, hence first storing then setting to null + maintaining the reference to the building Linked List(previous).
+
 
