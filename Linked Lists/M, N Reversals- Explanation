@@ -1,0 +1,13 @@
+Will m and n always be within the bounds of the linked list? YES
+Can we receive m and n values for the whole linked list? Yes-->reverse the linked list
+
+Writing out the test cases: only one listnode,m=1,n=1;;; None listnode, m=0,n=0
+BEST CASE TEST CASE
+
+Key: Have to change the pointers
+keep the track of m-1 because that has to be pointed to the reversed linked list.
+n+1 too
+
+in the question, we get a head value.
+ 
+the reversal question-i gave the head of the newly formed linkedlist. We have to have the track of the tail value as well here.
