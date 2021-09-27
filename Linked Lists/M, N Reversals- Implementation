@@ -1,0 +1,35 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
+        currentPos= 1 #since head is 1
+        currentNode= head
+        start=head
+        while(currentPos<left):
+            start= currentNode
+            currentNode= currentNode.next
+            currentPos+=1 #2
+        newList=None
+        tail=currentNode #2
+        while currentPos>=left and currentPos<=right:
+            nextValue=currentNode.next #3
+            currentNode.next=newList  #None
+            newList=currentNode #2
+            currentNode=nextValue
+            currentPos+=1
+        start.next=newList
+        tail.next=currentNode
+        if left>1:
+            return head
+        else:
+            return newList
+            
+            
+Space: we are just modifying the original pointers to the different objects that are already stored in the memory.
+O(1); Only 5 static pointers.
+
+Time: O(N)
+
