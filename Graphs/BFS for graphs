@@ -1,0 +1,14 @@
+def traversalBFS(graph):  #takes in adjacency list
+  queue=[0]
+  values=[]
+  seen={}
+  while(len(queue)):
+    vertex=queue.popleft()
+    values.append(vertex)
+    seen[vertex]=True  #so that we don't double count this value
+    connections=graph[vertex]
+    for i in range(len(connections)):
+      connection= connections[i]
+      if connection not in seen:
+        queue.append(connection)
+  return values
