@@ -1,0 +1,29 @@
+The collection of vertices/nodes is a graph. The connection is the edge.
+The nodes can have any number of connections to numerous nodes. There can exist cycles(some circular like structure).
+
+Types:
+Undirected(every edge is bidirectional)
+Directed(arrows can go both ways) --<----->---
+--mainly dictated in the terms of the traversal order.
+Directed Unweighted/weighted
+Undirected weighted/unweighted
+
+Unconnected Graph
+
+-> All binary trees are graphs but all graphs are not binary trees.
+-> A 2-D array is also a representation of a graph
+
+Representation of Graphs:
+
+Adjacency List(an array where the index values correspond to the nodes, dictionaries for string object notations)
+fast lookups.
+Space: depends on number of edges in the graph
+
+Adjacency Matrix:
+2-d array where each cell gives the answer if a connection exists between the nodes(1 or 0)
+Dense data structure, takes (number of nodes)^2 space. 
+
+Traversals
+BFS(for graphs and trees),DFS(for graphs and trees).
+-->BFS
+queue, answers array(preserves values)
