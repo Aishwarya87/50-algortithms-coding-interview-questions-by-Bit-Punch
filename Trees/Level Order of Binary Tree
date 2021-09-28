@@ -1,0 +1,15 @@
+Level order: returning array of arrays
+Verify the constraints:
+Test Cases:
+Heavily skewed : densed on one side.
+
+Which traversal is better for this problem. 
+BFS:  top down+left right pattern
+
+BFS is an iterative solution
+
+Modify the BFS algo.
+ Steps:
+ 1) Identify levels of the tree
+ 2) initialize our array
+ 3) push the array into the resulting array.
