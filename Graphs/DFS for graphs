@@ -1,3 +1,15 @@
-The function is mostly recursive.
+The function is mostly recursive. This logic is going to repeat itself over and over again as far down one branch as it possibly can go.
 
+difference between BFS and DFS:
+1) in BFS,siblings are visited before the children and the vice versa for DFS.
+2) BFS considers all neighbors first and not suitable fo decision making trees. From a conceptual standpoint, DFS is more suitable for puzzle problems because it makes a decision
+and explores all the paths through this decision and stops if the decision leads to a win situation.
 
+def traversalDFS(vertex, graph, values,seen):
+  values.append(vertex)
+  seen[vertex]=True
+  connections=graph[vertex]
+  for connection in connections:
+    if connection not in seen:
+      traversalDFS(connection,graph,values,seen)
+      
