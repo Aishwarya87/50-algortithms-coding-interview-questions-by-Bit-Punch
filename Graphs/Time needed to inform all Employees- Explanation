@@ -23,7 +23,7 @@ class Solution:
     def numOfMinutes(self, n: int, headID: int, manager: List[int], informTime: List[int]) -> int:
         def dfs(currentID,adjList,informTime):
             if not adjList:
-                return 0
+                return 0    #return 0 for the nodes that have no subordinates/children because that will take inform time=0
             maximum=0
             subordinates=adjList[currentID]
             for i in range(len(subordinates)):
