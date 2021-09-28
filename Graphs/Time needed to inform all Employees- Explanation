@@ -1,0 +1,46 @@
+Graph questions are abstract. The question resembles a N-ary tree(graph like solution) like structure:
+Any node can have any number of branches.
+
+Verify the constraints:
+Is this a Cyclic(reaching back the same node on traversal) Graph? Its guaranteed that the subordination relationships have a tree structure. Hence, no cycles
+Is it circular if not cyclic? Can the employees have more than one manager
+Is it Unconnected? Does every employee have a manager
+Is this weighted?
+Is this directed? Because it's a tree it must be directed
+
+Test Cases:
+heavily one sided binary tree.
+
+Since there is no relationship among vertices of the same level and that of the vertices and subordinates that are not their own, for this reason there are limited
+number of connections. Therefore we use a adjacency list.
+
+Creation of an adjacency list
+Using DFS. We want to explore a full branch first
+
+
+
+class Solution:
+    def numOfMinutes(self, n: int, headID: int, manager: List[int], informTime: List[int]) -> int:
+        def dfs(currentID,adjList,informTime):
+            if not adjList:
+                return 0
+            maximum=0
+            subordinates=adjList[currentID]
+            for i in range(len(subordinates)):
+                maximum=max(maximum,dfs(subordinates[i],adjList,informTime))
+            return maximum+informTime[currentID]
+        
+        adjList=collections.defaultdict(list)
+        for e in range(n):
+            m=manager[e]
+            if m==-1:
+                continue #will skip the next statements and move on to the next value for e
+            adjList[m].append(e) #[1:[0],2:[1]]
+            
+        return dfs(headID,adjList,informTime)
+    
+        
+        
+        
+        
+        
