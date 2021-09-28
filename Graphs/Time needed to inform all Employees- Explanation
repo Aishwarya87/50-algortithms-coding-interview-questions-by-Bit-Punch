@@ -40,7 +40,8 @@ class Solution:
         return dfs(headID,adjList,informTime)
     
         
-        
+Time Complexity: O(N) for adjacency list and O(N) for dfs algorithm because it touches every single vertex but only once== O(N)
+Space Complexity: O(N) -- the worst case, full list upto N for the heavily one sided binary tree.
         
         
         
