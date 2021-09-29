@@ -1,0 +1,61 @@
+DFS comes with three variations of traversals:
+  postorder(LRN), inorder(LNR), preorder(NLR)
+  
+Question 1)) Does it matter how we traverse the tree?
+Since the order of the nodes matter for this question so it does
+
+Question 2)) BFS or DFS
+BFS lets us go level by level(getting the very last value for the resulting array) which would make us abide by the order of the nodes in the solution array. 
+
+Identify the end of a level(count variable)
+add last node to a global array
+instantiate a queue to process the values
+
+USING BFS:
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
+        
+        if root is None:
+            return []
+        result=[]
+        queue=[root]
+        while queue: #
+            length=len(queue) #
+            count=0
+            while(count<length): #0<2
+                currentNode=queue.pop(0) #2
+                if currentNode.left: #[2]
+                    queue.append(currentNode.left) 
+                if currentNode.right:
+                    queue.append(currentNode.right) #
+                count+=1
+            result.append(currentNode.val) #
+        return result
+        
+USING DFS:
+Go far down without the need to switching the nodes.
+
+Recursive
+Modifying the preorder(NRL),inorder(RNL),postorder(RLN) traversal.
+This is legit because the order of node has relevance and not left or right.
+
+In the patterns(for modifies pre,pose,inorder), modified preorder matches more closely to the actual solution.
+
+Pattern seen: the first time the element is seen for a level, it will be the rightmost element.
+
+Creating the Recursive Function:
+Call the function first time on the root node.
+We traverse down one of its children. Recursively calling the function again.
+We are able to pass down values to children of whatever context we have of its immediate parent(nature of recursion).
+
+
+
+
+
