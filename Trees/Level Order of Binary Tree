@@ -13,3 +13,46 @@ Modify the BFS algo.
  1) Identify levels of the tree
  2) initialize our array
  3) push the array into the resulting array.
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        if root is None:
+            return []
+        result=[]
+        queue=[root]
+        while queue: #
+            length=len(queue) #
+            count=0
+            currentLevelValues=[]
+            while(count<length): #0<2
+                currentNode=queue.pop(0) #2
+                currentLevelValues.append(currentNode.val) #[2]
+                if currentNode.left: #[2]
+                    queue.append(currentNode.left) 
+                if currentNode.right:
+                    queue.append(currentNode.right) #
+                count+=1
+            result.append(currentLevelValues) #
+        return result
+        
+        
+        
+ Time Complexity: How many times do we touch every single node: once   O(N)
+ Space Complexity: Scaling Data Structures:
+ result array==can store all the values in subarrays: O(N)
+ queue== The size of the queue at largest can be the size of a level. So for worst space complexity, let's consider a full binary tree.
+ The bottom level(fattest) is the maximum size of the queue which is N/2. 
+ 
+ Hence O(N)
+ 
+ We have not had to come up with a brute force solution
+ 
+ 
+ 
+ 
