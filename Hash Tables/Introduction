@@ -1,0 +1,25 @@
+Hash Tables/ Hash Maps/ Maps(in Java)/ Unordered Maps/ Dictionaries(in Python)/ Objects(in JavaScript)/ Hashes(in Ruby)
+Where do you see them?
+In databases, caches
+basket.grapes= 10000; where basket object has key as grapes and value as the quantity. This also is a representation of a hash table.
+
+
+Hash Function: decides where to put the data into the memory of the computer.
+md5 Hash Generator: hash function
+1))This is one way: the 'gibberish' output cant be decoded back to the original.
+2)) The output is fixed for that particular string (Idempotent).
+Why to use:
+really fast data access. (shows where the item is in the memory)
+
+
+insert,lookup,delete,search:::O(1)
+Hash Collisions: Hash function generates random addresses; overflow entries
+It actually stores the key and the value in the "buckets" at an address.
+Collision slows down to O(N).
+
+Separate Chaining(using Linked List)
+Open Addressing
+Robin Hood Hashing
+
+
+HahTables are faster than arrays in terms of searches,inserts, and deletes. 
