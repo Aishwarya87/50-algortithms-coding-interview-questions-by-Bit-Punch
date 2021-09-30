@@ -1,0 +1,28 @@
+Full Tree: Every tree node has either 0 children or 2 children. This is the only stipulation.
+Complete Tree: Every level is completely full. The only level that doesn't need to be full is the last level and even if it's not, all the nodes must be pushed as far left
+as possible.
+
+Verify the constraints:
+1) empty binary tree=0
+2) complete and full binary tree
+
+Voice the concern that either bfs or dfs can be leveraged.
+What is the more optimal solution?
+How to bring the time and the space down from O(N) with an attempt for O(log n). Since the complete and full binary tree gives the illusion of 'Divide and Conquer'
+
+The relation to log2 (N): 
+N: no. of nodes.=15
+log2 (N)= 4
+Number of Levels=4= Height of the tree
+
+Number of nodes at a particular level = 2^level
+
+The value of the number of nodes in the upper half tree other than the last level is equal to (2^h-1)-1=== O(1) time
+
+Figuring out Number of nodes at the last level: look for the rightmost node. (logN) time === the search is binary search
+
+Numerical representation of the nodes using indices(array like structure of last level).
+
+Now, hot wo navigate down to the bottom level to check if the node exist from the root in log(N) time. How to know if the value 
+is at the left or the right side of the root node? ==> Binary Search
+We ran this method for 4 times(for height=4) which is logN
