@@ -1,0 +1,16 @@
+Both static and dynamic arrays can increase their memory once it hits a certain limit and double-up the memory in another location. This has a performance implication.
+Arrays have bad performance in operations like insert and delete that have to shift indexes over. 
+
+Why Linked Lists:
+These are scattered all over the memory like hash tables. Iterating through a linked list is a bit slower than iterating through an array.
+Insertions are better than in arrays.
+Their advantage over hash tables: These are ordered(sorted data).
+
+Operations in a linked list:
+prepend: O(1)
+append: O(1)
+lookup: O(n)
+insert: O(n)
+delete: O(n)
+
+Pointers: a reference.
