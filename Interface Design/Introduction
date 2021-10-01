@@ -1,0 +1,23 @@
+Application interfaces.
+Construct a class based interface.
+Given the following interface, implement its methods, monarchy interface
+
+interface Monarchy{
+void birth(String child, String parent);
+void death(String name);
+List<String> getOrderOfSuccession();
+}
+
+Monarchy Family Tree:
+new Monarchy('Jake')  #instantiate a new interface(pass with a king/monarch)
+birth('Catherine','Jake')
+birth('Tom','Jake')
+
+These are N-ary Trees.
+
+getOrderOfSuccession()
+#what is the order?
+
+Step1: Verify the constraints: Can we implement helper classes/objects?
+
+Step2: Write out some test cases: 
