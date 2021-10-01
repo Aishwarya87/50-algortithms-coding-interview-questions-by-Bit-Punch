@@ -1,3 +1,72 @@
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+import math
+class Solution:
+    def countNodes(self, root: Optional[TreeNode]) -> int:
+        #here height is taken from level 1; i.e. level0= height0
+        if root is None:
+            return 0
+        def getTreeHeight(root):
+            height=0
+            while(root.left!=None):
+                height+=1
+                root=root.left
+            return height
+        def nodeExists(idxToFind,height,node):
+            left=0
+            right=(2**height)-1
+            count=0
+            midOfNode=0
+            while(count<height):
+                midOfNode=math.ceil((left+right)/2)
+                if(idxToFind>=midOfNode):
+                    node=node.right
+                    left=midOfNode
+                else:
+                    node=node.left
+                    right=midOfNode-1
+                count+=1
+            return node!=None
+                
+        height= getTreeHeight(root)
+        if height==0:return 1 #only one node
+        upperCount=(2 ** height)-1
+        left=0
+        right=upperCount #3
+        while(left<right):  #checking for the value if it exists
+            idxToFind= math.ceil((left+right)/2) #2
+            if(nodeExists(idxToFind,height,root)):
+                left=idxToFind
+            else:
+                right=idxToFind-1
+        return upperCount+left+1
+        
+        
+Time Complexity: 
+
+getTreeHeight= O(h/height of the tree)= O(log N) = where N is the total number of potential nodes. 
+
+while loop: Binary search on the last level: O(log(N/2)): SINCE N/2 nodes in the last tree, which ultimately results in O(log N).
+SINCE Log N= height of the tree. therefore: O(h)
+
+nodeExists: We call this function O(h) times since the while loop runs O(h) times.
+overall runtime of binary search within binary search: O(h^2).
+t: O(h^2+h)
+= O(h^2)
+=O(log N *logN)
+=O(log^2 N)
+
+
+Space Complexity: O(1)
+
+
+
+
+
 
 
 
