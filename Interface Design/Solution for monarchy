@@ -1,0 +1,29 @@
+array for childrens.
+Depth First Search, Going depthwise for branches.
+Preorder depth first search, Node, left, right
+
+have to retain the dead person's child.
+isAlive boolean
+
+internal hashmap for instant lookups. 
+
+1) Instantiate the person tree node class
+ class Person{
+  constructor(name){
+    this.name=name;
+    this.isAlive=true;
+    this.children=[];
+    }
+}
+class Monarchy{
+  constructor(king){
+    this.king=new Person(king)  #entry node #will have name, isAlive, children properties 
+    this._persons={  #internal use only method for the class
+      [this.king.name]: this.king   #hashmap
+      }
+}
+birth(childName, parentName){
+parent= this._persons[parentName]
+newChild = new Person(childName)
+parent.children.push(newChild)
+this.
