@@ -1,0 +1,39 @@
+These are unidirectional. Leaf nodes which are the very end of a tree data structure. We can have user information as well stored in the nodes.
+SUBTREES
+
+examples:
+1) a dom(a document object model) is a tree data structure in developer's tool of an application.
+2) chess moves
+3) ABSTRACT SYNTAX TREES forms after the code/program is broken down by the machine.
+4) "Linked List is technically a type of tree" but with just one single Linear path.
+
+Binary Tree:
+1) Each node can only have either 0,1 or 2 nodes.
+2) Each child can only have one parent.
+
+Perfect Binary Tree(all leaf nodes are full) versus Full Binary tree( a node has either 0 or two children).
+
+Characteristics of PBT:
+PBT has double the nodes in consecutive levels. 1,2,4,8,....
+last level nodes count= all nodes above it + 1
+this means half of the nodes are in the last level.
+This brings about efficiences because half of the data is in the last level. O(log N).
+
+O(log N):
+
+level 0: 2^0: 1
+level 1: 2^1: 2
+level 2: 2^2: 4
+level 3: 2^3: 8
+Number of nodes: 2^h -1 : For height=3; level=3; no.of nodes=7
+log nodes= height
+
+the choice of the next element on which to perform the operation is one of several possibilities and only one needs to be chosen. 
+eg: A phonebook
+
+BINARY SEARCH TREES:
+a subset of binary tree.
+
+
+
+
