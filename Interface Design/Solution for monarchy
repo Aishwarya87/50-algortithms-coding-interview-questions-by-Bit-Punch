@@ -1,29 +1,66 @@
-array for childrens.
+
+Rudimentary version of a N-ary Tree
+
+array for children.
 Depth First Search, Going depthwise for branches.
 Preorder depth first search, Node, left, right
 
 have to retain the dead person's child.
 isAlive boolean
 
-internal hashmap for instant lookups. 
+internal hashmap(that gives access to the people) for instant lookups.( we use this for adding children
+to the nodes so that we dont have to traverse the tree multiple times)
 
-1) Instantiate the person tree node class
- class Person{
-  constructor(name){
-    this.name=name;
-    this.isAlive=true;
-    this.children=[];
-    }
-}
-class Monarchy{
-  constructor(king){
-    this.king=new Person(king)  #entry node #will have name, isAlive, children properties 
-    this._persons={  #internal use only method for the class
-      [this.king.name]: this.king   #hashmap
-      }
-}
-birth(childName, parentName){
-parent= this._persons[parentName]
-newChild = new Person(childName)
-parent.children.push(newChild)
-this.
+CODE>>>>>
+from pprint import pprint
+
+class Monarch:
+    def __init__(self):
+        self.name=None
+        self.children=[]
+        self.isAlive=True
+        
+class Monarchy:
+    def __init__(self):
+        self.firstMonarch=None
+        self.monarchs={}
+    def birth(self,child,parent):
+        monarch=Monarch()
+        monarch.name= child  #monarch.name=king
+        if parent==None and self.firstMonarch==None:
+            self.firstMonarch=monarch
+        else:
+            if not (parent in self.monarchs): #Andy,king; king not in monarchs
+                print("Parent not found")
+                return
+            self.monarchs[parent].children.append(monarch) 
+            #monarch[king],children=[Andy]
+        self.monarchs[child]=monarch #monarchs[king]=king,children,isAlive
+        #monarchs[andy]=andy,children,isAlive
+    def death(self,name):
+        self.monarchs[name].isAlive=False
+    def preorder(self,node):
+        if (node):
+            if node.isAlive==True:
+                print (node.name)
+            for child in node.children:
+                self.preorder(child)
+    def getOrderOfSuccession(self):
+        self.preorder(self.firstMonarch)
+        
+m=Monarchy()
+m.birth("king", None)
+m.birth("Andy", "king")
+m.birth("Bob", "king")
+m.birth("Catherine", "king")
+m.birth("Matthew" , "Andy")
+m.death("Catherine")
+m.birth("Asha " , "Bob")
+
+pprint(vars(m.monarchs['king']))
+
+m.getOrderOfSuccession()
+        
+Birth,death= O(1)        
+getOrderOfSuccession: dfs traversal: O(N)
+
