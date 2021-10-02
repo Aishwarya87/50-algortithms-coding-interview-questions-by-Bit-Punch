@@ -1,0 +1,24 @@
+Turtle and hare algorithm:
+Step 1: Initialize both at the beginning of the list(head)
+Step 2: Move the turtle one step and the hare two steps at a time.
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def hasCycle(self, head: ListNode) -> bool:
+        turtle=head
+        hare= head
+        while hare and hare.next:
+            turtle=turtle.next
+            hare=hare.next.next
+            if turtle==hare: #will eventually meet up somewhere in the cycle(literally in the cycle, following 
+                #the pointers)
+                return True
+                
+                
+Time complexity: O(N): because of the single loop over the list
+Space Complexity:O(1)
