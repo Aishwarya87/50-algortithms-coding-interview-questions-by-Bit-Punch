@@ -1,0 +1,4 @@
+search for the smallest element in the array. Move that to the first position.
+Locking the entries from the starting of the array.
+Similar to bubble sort.
+
