@@ -1,0 +1,9 @@
+'''Distant style question'''
+Brute Force: repetitive work
+Relationship between he INF(start point) and the Gate(end point) IS BIDIRECTIONAL.
+Traverse from the gate to the inf;
+
+Step1: Sequential search to find the gates. As soon as a gate is encountered, perform DFS(recursive function- pass the current step), from this value to the entire 2d array.
+We do this for every value until we find a gate.
+
+
