@@ -1,0 +1,7 @@
+Sorting becomes problematic when the input size goes large.
+Cannot use the built in sort method for everything. Companies like amazon, google, microsoft, netflix need their custom based sorting algorithm.
+Trade offs between the sorting algorithms.
+
+The issue with sort():
+Different language have abstarct implementation under the hood of the sort() method. 
+The time and space complexity of the sort() method cannot be guaranteed as it is implementation dependent.
