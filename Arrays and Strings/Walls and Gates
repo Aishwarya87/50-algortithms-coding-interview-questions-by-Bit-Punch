@@ -6,4 +6,46 @@ Traverse from the gate to the inf;
 Step1: Sequential search to find the gates. As soon as a gate is encountered, perform DFS(recursive function- pass the current step), from this value to the entire 2d array.
 We do this for every value until we find a gate.
 
+Step 2: initialize step=1
+        from the node, traverse all the four directions only if there is no obstacle(its in bounds and there is no wall) .
+        check if the currentStepValue< current value in the cell; then replace the value in the cell; and increase the step
+        Since it is DFS, we traverse to the depth of a single path, and then recursively backtrack to the main program.
+        What is the base case/ where to >matend the depth first search
+        -> when we reach a point where stepvalue> value at the cell such as in gates(0).
+        -> this also indicates that the cell has either less or same level of reachability from the multiple gates.
+        
+        
+WALL = -1
+GATE = 0
+EMPTY= 2147483647
+directions= [[-1,0],[1,0],[0,-1],[0,1]] 
 
+def function(matrix):
+  #returning back the modified version of the same matrix
+  total_rows= len(matrix)
+  total_cols = len(matrix[0])
+  for row in range(len(total_rows)):
+    for col in range(len(total_cols)):
+      if matrix[row][col]==GATE:  # iff then perform DFS
+        dfs(matrix,row,col,0)
+  return matrix
+  
+  
+def dfs(matrix,row,col,currentStep):
+  if row<0 or row>=total_rows or col<0 or col>=total_cols or currentStep>matrix[row][col]:
+    return  #exit from the stack that we are currentlt looking through
+  matrix[row][col]=currentStep
+  for direction in directions:
+    dfs(matrix, row+direction[0], col+direction[1], currentStep+1)
+    
+ Time complexity: O(N) where N is the total number of elements in the matrix
+ Space complexity: stack can be the size of the entire 2d array. O(N)
+    
+    
+  
+  
+  
+  
+  
+  
+        
