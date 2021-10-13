@@ -1,0 +1,48 @@
+Topological sort:
+Every vertex in isolation has an indegree factor for a directed graph.
+indegree: how many connections coming into the vertex.
+or how many edges pointing into the vertex.
+Take the vertices with indegree = 0.
+works for DIRECTED ACYCLIC GRAPH.
+Why not for cyclic?
+At some point, there exists indegree value!= 0.
+
+step1) build the indegree array, initialized to 0 for every index at the start.
+step2) build the adjacency list.
+step3) scan through and find which index has indegree=0. 
+step4) decrease by 1 the indegree values for the vertices with the aid of the adjacency list.
+step5) repeat from step3
+
+class Solution:
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        indegree= [0 for _ in range(numCourses)]
+        adjList = [[] for _ in range(numCourses)]
+        for x,y in prerequisites:
+            indegree[x]+=1
+            adjList[y].append(x)
+        stack=[] # keeps track of the nodes that have indegree=0
+        for i in range(len(indegree)):
+            if indegree[i]==0:
+                stack.append(i)
+        #if theres a cycle, we have not touched every vertex
+        count=0 
+        # Topological Sort
+        while(len(stack)):
+            curr = stack.pop()
+            count+=1 #processes one vertex
+            adjacent = adjList[curr]
+            for ele in adjacent:
+                indegree[ele]-=1
+                if indegree[ele]==0:
+                    stack.append(ele)
+                    
+        return count==numCourses #touched every single vertex; no cycle
+     # if count is less, then there was a cycle
+     
+     
+     time complexity: O(N * N+E) ==> stack can reach upto N, N+E= adjacency list, N arrays in the adjacency list and E edges
+     Space: O(N+E * N(stack)) ==> O(N2)
+     
+     
+     
+     
