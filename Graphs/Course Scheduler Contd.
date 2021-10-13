@@ -43,6 +43,6 @@ class Solution:
      time complexity: O(N * N+E) ==> stack can reach upto N, N+E= adjacency list, N arrays in the adjacency list and E edges
      Space: O(N+E * N(stack)) ==> O(N2)
      
-     
+     CAN DECREASE the space complexity by eliminating the adjacency list and depending on the prerequisite array to decrease the indegree of what vertices.
      
      
