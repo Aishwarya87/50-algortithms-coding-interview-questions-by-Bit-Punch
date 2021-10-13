@@ -1,0 +1,34 @@
+How did you know that this is a graph question. 
+Relationship between pairs -> defining two vertices --> relationship is dictated as an edge.
+
+step 1) If there is a cycle in the structure, we are stuck in a loop. Dont know where to start off. Not able to finish the courses.
+step 2) Building an adjacency list
+keys= 0 to n-1
+list= using the prerequisite list. 
+step 3) since there can be an unconnected graph, to which the answer would be false. Therefore we have perform the full traversal on every single node( covered every single node)
+
+Initial Brute Force BFS Solution: 
+
+class Solution:
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        # generating the adjacency list
+        adjList = [[] for _ in range(numCourses)]
+        for x, y in prerequisites:
+            adjList[y].append(x)
+        for v in range(numCourses):
+            queue= []
+            seen = {}
+            for adj in adjList[v]:
+                queue.append(adj)
+            while len(queue):
+                curr= queue.pop(0)
+                seen[curr] = True
+                if curr == v: #cycle
+                    return False
+                adjacent= adjList[curr]
+                for i in adjacent:
+                    if i not in seen:
+                        queue.append(i)
+                        
+                        
+        return True
