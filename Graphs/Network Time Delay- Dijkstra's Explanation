@@ -1,0 +1,13 @@
+This algorithm explores all the edges in a search for better path.
+
+Step1) Have an array for nodes all assigned to infinity because we don't know what the distances are yet.
+Step2) Start from the starting node.
+Step3) Figure out the distance of every node connected DIRECTLY from the starting node. 
+Step4) Make changes into the array accordingly/Update the value if the current evaluated value < value in the array.
+Step5) Once done for the particular node[no direct edges remaining], close off/block that node(NEVER VISIT that node again).
+
+Step6) start off with the node that has the smallest value in the array.[GREEDY DECISION MAKING]
+Step7) repeat step 3,4,5 but with the new node.
+
+Step8) Repeat for other nodes in this manner.
+
