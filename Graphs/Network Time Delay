@@ -1,9 +1,0 @@
-direction: source and a target
-weights: time associated 
-times array to build out the graph
-can't use bfs and dfs because there is no looking back. The signal expands outwards and spreads out.
-faster way of sending the signal(compare weight) / shortest time between the starting node(k) to any node(or all nodes).
-
-Dijkkstra's Algorithm- Greedy method- solving an optimization problem.
-
-

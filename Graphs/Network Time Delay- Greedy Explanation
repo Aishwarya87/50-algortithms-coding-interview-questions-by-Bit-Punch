@@ -1,0 +1,31 @@
+Greedy Algorithm:
+a) The question is an Optimization Question(find the minimum possible value/maximum possible value); Hence Greedy.
+b) example: ShortestTime, forking in roads
+Downsides to greedy algorithm:
+It is not suitable for Greedy problems where a solution is required for every subproblem like sorting.
+In such Greedy algorithm practice problems, the Greedy method can be wrong; in the worst case even lead to a non-optimal solution.
+Therefore the disadvantage of greedy algorithms is using not knowing what lies ahead of the current greedy state.
+Dijkstra's covers this weakness by adding onto greedy as well.
+
+
+direction: source and a target
+weights: time associated 
+times array to build out the graph
+can't use bfs and dfs because there is no looking back. The signal expands outwards and spreads out.
+faster way of sending the signal(compare weight) / shortest time between the starting node(k) to any node(or all nodes).
+
+Dijkkstra's Algorithm- Greedy method- solving an optimization problem.
+
+Test cases:
+Disconnected Situations:
+1) receive an unconnected graph; return -1
+2) A connected graph where all nodes cannot be reached(no directed edge to that node); return -1.
+
+Naive Approach: Depth First Search
+[1:0, 2:9, 3: ,4: , 5: ]
+where keys are the nodes in the graph and values are the shortest time compared every time.
+This repeats loops and edges. 
+Hence, we need to optimize it. The question is an Optimization Question(find the minimum/maximum value).
+Shortest Path(to all the nodes from any specific node) for the Directed Weighted Graph: 2 Algorithms
+
+Dijkstra's Algorithm can only be applied to the graphs that are directed and weighted.
