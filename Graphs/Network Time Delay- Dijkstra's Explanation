@@ -1,3 +1,5 @@
+Djikstra's starts from some node and gives the shortest distance to all the other nodes.
+
 This algorithm explores all the edges in a search for better path.
 
 Step1) Have an array for nodes all assigned to infinity because we don't know what the distances are yet.
@@ -6,8 +8,14 @@ Step3) Figure out the distance of every node connected DIRECTLY from the startin
 Step4) Make changes into the array accordingly/Update the value if the current evaluated value < value in the array.
 Step5) Once done for the particular node[no direct edges remaining], close off/block that node(NEVER VISIT that node again).
 
-Step6) start off with the node that has the smallest value in the array.[GREEDY DECISION MAKING]
+Closing off means a)cant be the new vertex(not included for smallest weight check[step6]) b)can't travel back to that vertex[can't change its value in the array].
+
+Step6) start off with the node[NEW VERTEX] that has the smallest value in the array[GREEDY DECISION MAKING].
 Step7) repeat step 3,4,5 but with the new node.
 
 Step8) Repeat for other nodes in this manner.
+Step9) Return the maximum value in the array for the shortest time. If the maximum value is infinity, return -1.
+
+
+
 
