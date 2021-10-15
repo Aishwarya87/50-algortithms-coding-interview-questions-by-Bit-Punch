@@ -1,0 +1,14 @@
+By design resembles a complete binary tree(every single level is full except for the very last level;nodes at the last as pushed to the left as possible).
+Two variations: Max Heap; Min Heap
+
+Max Heap: At any given node, all of the children of that node must be smaller than that node. Root node is the greatest.
+Min Heap: The root node is the smallest value in the heap. All of the children are greater than the parent node.
+
+Representation of a heap in code:
+1) receive the root node as an object.
+2) using Breadth First Search[top down left to right] to fill the array. Parent= floor value(rounding down)
+Mathematical formula to access 
+parent: floor((idx-1)/2)
+left= (idx*2) +1
+right= (idx*2) +2
+
