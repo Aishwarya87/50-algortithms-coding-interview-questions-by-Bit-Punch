@@ -1,0 +1,66 @@
+Writing out the API(implementing methods examples:pop,append for list)
+
+Heap structure that represents a priority queue
+
+class PriorityQueue:
+  heap=[] #our heap is an array
+  def comparator(a,b): #where a=newlyPushedElement
+    return a>b  #max heap 
+  def size(): #returns number of nodes in the heap
+    return len(heap)
+  def isEmpty():
+    return size()==0 #returns true if heap is empty
+  def peek():
+    return heap[0] #not changing the initial array
+  def _parent(idx):
+    return math.floor((idx-1)/2)
+  def _leftChild(idx):
+    return idx*2 +1
+  def _rightChild(idx):
+    return idx*2 +2
+  def _swap(i,j):
+    temp=heap[i]
+    heap[i]=heap[j]
+    heap[j]=temp
+  def _compare(i,j):
+    return comparator(heap[i],heap[j]) #15-root,20-child
+  def push(value):
+    heap.append(value)
+    _siftUp()
+    return size() #new size of the heap
+  def _siftUp():
+    nodeIdx = size()-1
+    while(nodeIdx>0 and _compare(nodeIdx, _parent(nodeIdx))):
+      _swap(nodeIdx,_parent(nodeIdx)
+      nodeIdx=_parent(nodeIdx)
+  def pop():
+    if size()>1:
+      _swap(0,size()-1)
+    poppedValue= heap.pop() #return the last value of the array which is maximum
+    _siftDown()
+    return poppedValue
+  def _siftDown():
+    nodeIdx=0
+    while(_leftChild(nodeIdx)<size() and _compare(_leftchild(nodeIdx),nodeIdx)  or _rightChild(nodeIdx)<size() and _compare(_rightchild(nodeIdx),nodeIdx)):
+        if _rightChild(nodeIdx)<size() and _compare(_rightChild(nodeIdx), _leftChild(nodeIdx)):
+          greaterNodeIdx= _rightChild(nodeIdx)
+        else:
+          greaterNodeIdx= _leftChild(nodeIdx)
+
+        _swap(greaterNodeIdx,nodeIdx)
+        nodeIdx= greaterNodeIdx
+        
+        
+time complexity: siftUp: O(logN)
+                 siftDown: O(log N)
+                 
+                 
+                 
+                 
+    
+    
+    
+    
+    
+    
+    
