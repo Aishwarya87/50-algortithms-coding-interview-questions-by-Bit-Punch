@@ -1,0 +1,12 @@
+In max heap:
+Using Treenode
+step1) insert(new value=x) at the next available spot.
+step2) check if the max heap is valid. 
+step3) compare x with its parent. If x is greater, swap with its parent. For every iteration, compare x itself.
+
+Using BFS made Array
+step1) "append" x
+step2) compare against the parent value. keep comparing and swapping till the resting place has been found.
+
+
+
