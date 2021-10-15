@@ -1,0 +1,4 @@
+Removal/ Deletion/ Retreival from a max heap: get the greatest value.
+Step1) Remove the root node value.
+Step2) Restructure the heap
+
