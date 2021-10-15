@@ -1,4 +1,24 @@
+while removing the element: have to maintain the two propeties of heap a) Complete Binary Tree b)Max Heap
+
 Removal/ Deletion/ Retreival from a max heap: get the greatest value.
-Step1) Remove the root node value.
-Step2) Restructure the heap
+
+For TreeNode
+
+Step1) A function to remove the root node value.
+Step2) Reconfigure the heap
+Step3) Take the rightmost value at the last level[to also MAINTAIN the COMPLETE BINARY TREE property] and move it on root's place.
+Step4) Get the highest value out of the children and the parent(node itself) and place[swap] the highest as the parent(node).
+Step5) Repeat step4 for the subtree.
+
+For Array
+Same changes in array.
+
+Size= O(N)
+Insertion: sifting up the value up making swaps along the way. Maximum swaps from the base to the root of the tree= height of the tree; O(log N) 
+Removal: sifting down and swapping along the height of the tree takes O(log N) time
+
+
+Priority queue and max heap are pretty much the exact same thing. A priority queue returns an element with the highest priority/value. In case of max heaps, it returns the
+first element[root node].
+
 
