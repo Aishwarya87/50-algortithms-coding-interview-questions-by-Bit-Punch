@@ -1,0 +1,8 @@
+def networkTimeDelay(times,N,k):
+  distances=[float("inf")]*N
+  adjList = [[] for i in distances]
+  distances[k-1]=0  #nodes in the graph starting from 1
+  
+  
+  
+  
