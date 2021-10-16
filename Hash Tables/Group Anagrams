@@ -1,0 +1,13 @@
+An anagram is a word formed by rearranging the letters of a different word. such as: eat, tea, ate
+
+Approach: append the string to the key of the sorted string in the hashmap.
+
+Time complexity: O(N* M* LOG(M))
+N= length of the input array
+
+M= length of the biggest string in the array
+Sorting algo:  M*LogM : since we sort each string when we pass over it in the loop.
+
+Space Complexity: O(N): hashmap
+
+
