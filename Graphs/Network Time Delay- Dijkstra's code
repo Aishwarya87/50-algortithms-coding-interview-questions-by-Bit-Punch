@@ -2,6 +2,30 @@ def networkTimeDelay(times,N,k):
   distances=[float("inf")]*N
   adjList = [[] for i in distances]
   distances[k-1]=0  #nodes in the graph starting from 1
+  heap= new PriorityQueue(a,b) #by priority queue API
+  # min heap
+  heap.append(k-1)
+  for time in times:
+    source= time[0]
+    target= time[1]
+    weight= time[2]
+    adjList[source].append([target-1,weight])
+  while(len(heap)):
+    currentVertex=heap.pop(0)
+    adjacent= adjList[currentVertex] #array of all of the neighbors
+    for adj in adjacent:
+      neighboringVertex= adj[0]
+      weight = adj[1]
+      if distances[currentVertex]+ weight<distances[neighboringVertex]:
+        distances[neighboringVertex]= distances[currentVertex]+ weight
+        heap.append(neighboringVertex) # value is less than infinity-->compare against all of the other vertices and find the smallest one stored in the heap so far
+        # the priority queue will reorder the nodes inside based on the distance
+        # so that popping will always yield the smallest value--> greedy method
+        #This way, not have to go thorugh the entire array in search of the smallest value
+        
+  answer= max(distances)
+  return -1 if answer==float("inf") else answer
+  
   
   
   
