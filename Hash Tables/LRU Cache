@@ -1,0 +1,21 @@
+Design Problem
+
+A cache is a memory that stores data for it to be served faster in the future.
+Its purpose is to speed up data requests.
+Least Recently Used(LRU) is a policy that is used to remove items from the cache.
+Stacks follow the LIFO policy, queues follow the FIFO policy, a cache can follow the LRU policy.
+Want to add a new item in the cache, where would we add it. 
+Remove the least recently used item(last item of the list).
+LRU cache follows the LRU principle.
+The functions get and put must each run in O(1) average time complexity.
+
+What data structures? for fast lookups(Hash Maps) and fast removals(double ended queues).
+
+LRU defines the replacement policy when the cache is full and paging fault occurs.
+Evict the least recently/ oldest request first. others will be shifted = the newest to the end.
+
+Optimization: Eliminate shifting( Use doubly Linked List): Move left and right in constnt time.
+Shifting: O(1)
+Searching: O(N)
+for q queries, Time: O(Q.N)
+
