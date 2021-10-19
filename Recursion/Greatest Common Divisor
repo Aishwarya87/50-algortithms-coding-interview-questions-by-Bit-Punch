@@ -1,0 +1,11 @@
+GCD is the largest positive integer that divides the number without a remainder.
+Algo- Euclidean
+gcd(48,12)
+step1) 48/18=2 remainder=12
+step2)18/12=1 remainder=6
+step3) 12/6=2 remainder=0
+
+unintentional case: negative numbers are passed. 
+assert- debugging tool
+
+
