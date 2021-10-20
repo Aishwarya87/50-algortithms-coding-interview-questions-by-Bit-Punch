@@ -1,0 +1,29 @@
+1) The main problem is to find the nth element because the list is not a doubly linked list; there is no way o traverse from the end to the nth position.
+2) The pointer should stop at n-1 node for it to connect with the n+1th node; hence deleting the nth node.
+3) One strategy is to reverse the list and remove the nth node from the starting.
+4) Other is using the offset value.
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        dummy= ListNode(0,head)
+        left = dummy
+        #right can't be initialized with the +n calculation. A loop is required
+        right=head #notice its not at dummy
+        while n>0 and right:
+            right=right.next
+            n-=1
+        while right:
+            #shifting the left and the right pointers node by node until right reaches null
+            left=left.next
+            right=right.next
+            
+        #delete
+        left.next=left.next.next
+        return dummy.next
+        
+        
